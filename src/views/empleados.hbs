@@ -1,0 +1,67 @@
+<div class="col-md-6 offset-md3">
+    <div class="card">
+        <div class="card-header">
+            <h1>Empleados</h1>
+        </div>
+        <div class="card-body">
+            {{#if empleados}}
+            <ul class="list-group">
+                {{#each empleados}}
+                <li class="list-group-item d-flex justify-content-between align-items-centers">
+                   
+                    {{nombre}} /
+                    {{apellido}} /
+                    {{cuil}} /
+                    {{telefono}} /
+                    {{direccion}} /
+                    {{fecha-ing}} /
+                    {{cargo}} /
+                    {{franco}} /
+                    {{bonus}} 
+                    <a href="/delete-empleados/{{@key}}" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </li>
+                 {{/each}}
+            </ul>
+            
+            {{else}}
+            <p>No Empleados</p>
+            {{/if}}
+        </div>
+        <div class="card-footer">
+            <form action="/new-empleados" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre del Empleado" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="apellido" placeholder="Apellido" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="cuil" placeholder="Cuil" class="form-control">
+                </div>
+                  <div class="form-group">
+                    <input type="tex" name="telefono" placeholder="Telefono" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" placeholder="Direccion" class="form-control">
+                </div>     
+                <div class="form-group">
+                    <input type="text" name="fecha_ing" placeholder="Fecha de ingreso" class="form-control">
+                </div>                      
+                  <div class="form-group">
+                    <input type="text" name="cargo" placeholder="Cargo" class="form-control">
+                </div>
+                  <div class="form-group">
+                    <input type="text" name="franco" placeholder="Franco" class="form-control">
+                </div>
+                  <div class="form-group">
+                    <input type="text" name="bonus" placeholder="Bonus" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

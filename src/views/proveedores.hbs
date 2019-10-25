@@ -1,0 +1,52 @@
+<div class="col-md-6 offset-md3">
+    <div class="card">
+        <div class="card-header">
+            <h1>Proveedores</h1>
+        </div>
+        <div class="card-body">
+            {{#if proveedores}}
+            <ul class="list-group">
+                {{#each proveedores}}
+                <li class="list-group-item d-flex justify-content-between align-items-centers">
+                   
+                    {{nombreempresa}}
+                    {{direccion}} /
+                    {{cuit}} /
+                    {{telefono}} /
+                    {{tipo}} 
+                    <a href="/delete-proveedores/{{@key}}" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </li>
+                 {{/each}}
+            </ul>
+            
+            {{else}}
+            <p>No Provedores</p>
+            {{/if}}
+        </div>
+        <div class="card-footer">
+            <form action="/new-proveedores" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombreempresa" placeholder="Nombre de la Empresa" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" placeholder="Direccion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cuit" placeholder="Cuit" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="tex" name="telefono" placeholder="Telefono" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="tipo" placeholder="Tipo" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+<div class="col-md-6 offset-md3">
+    <div class="card">
+        <div class="card-header">
+            <h1>Productos</h1>
+        </div>
+        <div class="card-body">
+            {{#if productos}}
+            <ul class="list-group">
+                {{#each productos}}
+                <li class="list-group-item d-flex justify-content-between align-items-centers">
+                   
+                    {{nombre}} /
+                    {{id-producto}} /
+                    {{tipo}} /
+                    {{marca}} /
+                    {{capacidad}} /
+                    {{iva}} /
+                    {{descripcion}} /
+                    {{stock-minimo}} /
+                    {{stock-maximo}} /
+                    {{existente}} /
+                    {{precio}} 
+                    <a href="/delete-productos/{{@key}}" class="btn btn-danger">
+                        Eliminar
+                    </a>
+                </li>
+                 {{/each}}
+            </ul>
+            
+            {{else}}
+            <p>No Productos</p>
+            {{/if}}
+        </div>
+        <div class="card-footer">
+            <form action="/new-productos" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre del Producto" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="id_producto" placeholder="Id_producto" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="tipo" placeholder="Tipo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="tex" name="marca" placeholder="Marca" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="capacidad" placeholder="Capacidad" class="form-control">
+                </div>     
+                <div class="form-group">
+                    <input type="text" name="iva" placeholder="Iva" class="form-control">
+                </div>                      
+                <div class="form-group">
+                    <input type="text" name="descripcion" placeholder="Descripcion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="stock-minimo" placeholder="Stock minimo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="stock:maximo" placeholder="Stock maximo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="existente" placeholder="Existente" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="precio" placeholder="Precio" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
