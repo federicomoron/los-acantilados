@@ -3,6 +3,7 @@ const app = require ('./app');
 app.listen(app.get('port'));
 console.log('Server on port', app.get('port'));
 
+/*
 <div>
 < script  src = " https://apis.google.com/js/api.js " > 
 < guión >
@@ -23,4 +24,4 @@ consola . log ( respuesta . resultado )};   }, función ( razón ) { consola . l
  </ guión>
 </script>
 </div>
-
+*/
